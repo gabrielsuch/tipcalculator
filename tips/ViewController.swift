@@ -25,12 +25,35 @@ class ViewController: UIViewController {
         return defaults.integerForKey("default_tip")
     }
     
+    func applicationBecameActive(notification: NSNotification) {
+        tip.selectedSegmentIndex = defaultTip()
+        updateValues()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Settings",
+            style: .Plain,
+            target: self,
+            action: "buttonClicked:"
+        )
+        
+        navigationItem.title = "Tips Calculator"
         totalLabel.text = "$0.00"
         tipLabel.text = "$0.00"
-        tip.selectedSegmentIndex = defaultTip()
         billAmount.becomeFirstResponder()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "applicationBecameActive:",
+            name: UIApplicationDidBecomeActiveNotification,
+            object: nil)
+    }
+    
+    func buttonClicked(sender:UIButton) {
+        let url = (NSURL(string:UIApplicationOpenSettingsURLString)!)
+        UIApplication.sharedApplication().openURL(url)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +61,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onEditingChange(sender: AnyObject) {
+        updateValues()
+    }
+    
+    func updateValues() {
         totalLabel.text = NSString(format:"$%.2f", total())
         tipLabel.text = NSString(format:"$%.2f", tipPerPerson())
     }
