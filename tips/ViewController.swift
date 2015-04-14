@@ -55,10 +55,6 @@ class ViewController: UIViewController {
         let url = (NSURL(string:UIApplicationOpenSettingsURLString)!)
         UIApplication.sharedApplication().openURL(url)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     @IBAction func onEditingChange(sender: AnyObject) {
         updateValues()
