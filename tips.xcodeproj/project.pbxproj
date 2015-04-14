@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184F531F1ADC99370063D6EC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 184F531E1ADC99370063D6EC /* Settings.bundle */; };
 		18E9DBDE1AD1053300D9F60B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9DBDD1AD1053300D9F60B /* AppDelegate.swift */; };
 		18E9DBE01AD1053300D9F60B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9DBDF1AD1053300D9F60B /* ViewController.swift */; };
 		18E9DBE31AD1053300D9F60B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E9DBE11AD1053300D9F60B /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		184F531E1ADC99370063D6EC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		18E9DBD81AD1053300D9F60B /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E9DBDC1AD1053300D9F60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18E9DBDD1AD1053300D9F60B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		18E9DBCF1AD1053300D9F60B = {
 			isa = PBXGroup;
 			children = (
+				184F531E1ADC99370063D6EC /* Settings.bundle */,
 				18E9DBDA1AD1053300D9F60B /* tips */,
 				18E9DBF01AD1053300D9F60B /* tipsTests */,
 				18E9DBD91AD1053300D9F60B /* Products */,
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184F531F1ADC99370063D6EC /* Settings.bundle in Resources */,
 				18E9DBE31AD1053300D9F60B /* Main.storyboard in Resources */,
 				18E9DBE81AD1053300D9F60B /* LaunchScreen.xib in Resources */,
 				18E9DBE51AD1053300D9F60B /* Images.xcassets in Resources */,
@@ -405,6 +409,7 @@
 				18E9DBF91AD1053300D9F60B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18E9DBFA1AD1053300D9F60B /* Build configuration list for PBXNativeTarget "tipsTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				18E9DBFC1AD1053300D9F60B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
