@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var totalLabel: UILabel!
     
+    @IBOutlet weak var tipLabel: UILabel!
+    
     func defaultTip() -> Int {
         let defaults = NSUserDefaults.standardUserDefaults()
         return defaults.integerForKey("default_tip")
@@ -26,6 +28,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         totalLabel.text = "$0.00"
+        tipLabel.text = "$0.00"
         tip.selectedSegmentIndex = defaultTip()
     }
 
@@ -35,6 +38,7 @@ class ViewController: UIViewController {
     
     @IBAction func onEditingChange(sender: AnyObject) {
         totalLabel.text = NSString(format:"$%.2f", total())
+        tipLabel.text = NSString(format:"$%.2f", tipPerPerson())
     }
     
     func amountValue() -> Double  {
@@ -45,6 +49,10 @@ class ViewController: UIViewController {
         let tipPercentages = [0.18, 0.2, 0.22]
         let selected = tipPercentages[tip.selectedSegmentIndex]
         return amountValue() * selected
+    }
+    
+    func tipPerPerson() -> Double {
+        return tipValue() / Double(splitValue())
     }
     
     func splitValue() -> Int {
