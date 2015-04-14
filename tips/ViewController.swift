@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         totalLabel.text = "$0.00"
         tipLabel.text = "$0.00"
         tip.selectedSegmentIndex = defaultTip()
+        billAmount.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
